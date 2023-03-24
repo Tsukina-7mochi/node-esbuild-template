@@ -2,7 +2,15 @@
   "name": "node-esbuild-template",
   "version": "0.1.0",
   "description": "Template for web project with esbuild on Node.js",
-  "scripts": {},
+  "scripts": {
+    "lint": "npx eslint .",
+    "fmt": "npx prettier --write .",
+    "fmt-check": "npx prettier --check .",
+    "build": "npx ts-node build.ts",
+    "dev": "npx ts-node build.ts --dev",
+    "watch": "npx ts-node build.ts --dev --watch",
+    "clean": "rm -rf dist/"
+  },
   "author": "Tsukina-7mochi",
   "license": "MIT",
   "devDependencies": {
