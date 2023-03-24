@@ -9,11 +9,8 @@ const destPath = path.join(__dirname, 'dist');
 
 const config: Partial<esbuild.BuildOptions> = {
   entryPoints: [
-    { in: path.join(srcPath, 'index', 'index.html'), out: 'index' },
-    { in: path.join(srcPath, 'index', 'style.scss'), out: 'index' },
-    { in: path.join(srcPath, 'calendar', 'calendar.html'), out: 'calendar' },
-    { in: path.join(srcPath, 'calendar', 'style.scss'), out: 'calendar' },
-    { in: path.join(srcPath, 'calendar', 'main.ts'), out: 'calendar' },
+    path.join(srcPath, 'index.html'),
+    path.join(srcPath, 'main.ts')
   ],
   outdir: destPath,
   bundle: true,
@@ -31,7 +28,6 @@ const config: Partial<esbuild.BuildOptions> = {
       baseOutDir: destPath,
       files: [
         { from: 'imgs/**/*', to: '[path]/[name][ext]' },
-        { from: 'favicon/**/*', to: '[path]/[name][ext]' },
       ],
     }),
   ],
