@@ -10,7 +10,7 @@ const destPath = path.join(__dirname, 'dist');
 const config: Partial<esbuild.BuildOptions> = {
   entryPoints: [
     path.join(srcPath, 'index.html'),
-    path.join(srcPath, 'main.ts')
+    path.join(srcPath, 'main.ts'),
   ],
   outdir: destPath,
   bundle: true,
@@ -26,9 +26,7 @@ const config: Partial<esbuild.BuildOptions> = {
     copyPlugin({
       baseDir: srcPath,
       baseOutDir: destPath,
-      files: [
-        { from: 'imgs/**/*', to: '[path]/[name][ext]' },
-      ],
+      files: [{ from: 'imgs/**/*', to: '[path]/[name][ext]' }],
     }),
   ],
 };

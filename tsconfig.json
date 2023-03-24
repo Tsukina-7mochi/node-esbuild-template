@@ -1,19 +1,12 @@
 {
-  "include": [
-    "src/**/*",
-    "build.ts"
-  ],
+  "include": ["src/**/*", "build.ts"],
   "exclude": [],
   "compilerOptions": {
     "target": "ESNext",
     "module": "commonjs",
     "sourceMap": true,
     "removeComments": true,
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": true,
     "strict": true,
     "noImplicitThis": true,
