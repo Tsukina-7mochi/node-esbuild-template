@@ -1,6 +1,5 @@
 import * as esbuild from 'esbuild';
-import devConfig from './esbuild.dev';
-import prodConfig from './esbuild.prod';
+import option from './buildOptions';
 
 let devFlag = false;
 let watchFlag = false;
@@ -23,7 +22,7 @@ for (const arg of process.argv) {
   }
 }
 
-const config = devFlag ? devConfig : prodConfig;
+const config = option(devFlag);
 
 (async () => {
   const ctx = await esbuild.context(config);

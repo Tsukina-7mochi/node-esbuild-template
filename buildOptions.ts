@@ -7,7 +7,7 @@ import copyPlugin from './plugins/copyPlugin';
 const srcPath = path.join(__dirname, 'src');
 const destPath = path.join(__dirname, 'dist');
 
-const config: Partial<esbuild.BuildOptions> = {
+const option = (dev: boolean): esbuild.BuildOptions => ({
   entryPoints: [
     path.join(srcPath, 'index.html'),
     path.join(srcPath, 'main.ts'),
@@ -29,6 +29,8 @@ const config: Partial<esbuild.BuildOptions> = {
       files: [{ from: 'imgs/**/*', to: '[path]/[name][ext]' }],
     }),
   ],
-};
+  minify: !dev,
+  sourcemap: dev ? 'inline' : 'linked',
+});
 
-export default config;
+export default option;
